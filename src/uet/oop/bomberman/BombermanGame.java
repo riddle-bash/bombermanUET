@@ -127,20 +127,18 @@ public class BombermanGame extends Application {
                         enemies.add(object);
                         break;
                     }
+                    default: {
+                        Entity object = new Grass(i, j, Sprite.grass.getFxImage());
+                        stillObjects.add(object);
+                        break;
+                    }
                 }
-                Entity object;
-                if (j ==0 || j == HEIGHT - 1 || i == 0 || i == WIDTH - 1) {
-                    object = new Wall(i, j, Sprite.wall.getFxImage());
-                } else {
-                    object = new Grass(i, j, Sprite.grass.getFxImage());
-                }
-                stillObjects.add(object);
             }
         }
     }
 
     private void createMapFromFile() {
-        String filePath = "C:\\Users\\admin\\OneDrive\\Desktop\\tet.game\\res\\levels\\Level2.txt";
+        String filePath = "C:\\Users\\admin\\OneDrive\\Desktop\\tet.game\\res\\levels\\Level1.txt";
         try {
             File file = new File (filePath);
             FileReader fileReader = new FileReader(file);
@@ -167,7 +165,6 @@ public class BombermanGame extends Application {
                 }
             }
             fileReader.close();
-            System.out.println("Contents of matrix: " + mapMatrix.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -199,6 +196,9 @@ public class BombermanGame extends Application {
     public void playMusic(String file) {
         Media media = new Media(new File(file).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setStartTime(Duration.ZERO);
+        mediaPlayer.setStopTime(Duration.seconds(3));
+        mediaPlayer.setCycleCount(10);
         mediaPlayer.play();
     }
 }

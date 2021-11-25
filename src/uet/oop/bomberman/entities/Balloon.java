@@ -42,6 +42,17 @@ public class Balloon extends Entity {
     }
 
     public static Direction canMove(Balloon balloon, char[][] mapMatrix) {
+//        if (mapMatrix[balloon.getY()][balloon.getX() - 1] == '#' || mapMatrix[balloon.getY()][balloon.getX() - 1] == '*') {
+//            return Direction.RIGHT;
+//        } else if (mapMatrix[balloon.y][balloon.x + 1] == '#' || mapMatrix[balloon.y][balloon.x + 1] == '*') {
+//            return Direction.LEFT;
+//        } else if (mapMatrix[balloon.y - 1][balloon.x] == '#' || mapMatrix[balloon.y - 1][balloon.x] == '*') {
+//            return Direction.DOWN;
+//        } else if (mapMatrix[balloon.y + 1][balloon.x] == '#' || mapMatrix[balloon.y + 1][balloon.x] == '*') {
+//            return Direction.UP;
+//        } else {
+//            return Direction.LEFT;
+//        }
         return Direction.LEFT;
     }
 }
