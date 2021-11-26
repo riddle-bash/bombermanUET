@@ -186,9 +186,11 @@ public class BombermanGame extends Application {
         int x = bomberman.getX();
         int y = bomberman.getY();
         enemies.forEach(enemy -> {
-            if (Math.abs(x - enemy.getX()) < 25 && Math.abs(y - enemy.getY()) < 25) {
+            if (Math.abs(x - enemy.getX()) < 15 && Math.abs(y - enemy.getY()) < 30) {
                 System.out.println("x: " + x + " y: " + y);
                 System.out.println("Co va cham x: " + enemy.getX() + " y: " + enemy.getY());
+                mediaPlayer.stop();
+                playMusic("");
             }
         });
     }
