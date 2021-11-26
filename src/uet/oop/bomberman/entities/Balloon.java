@@ -22,23 +22,23 @@ public class Balloon extends Entity {
 
     @Override
     public void update() {
-        if (canMove(this, BombermanGame.mapMatrix) == Direction.RIGHT) {
-            this.x = this.x + 1;
-            this.direction = Direction.RIGHT;
-            this.img = Sprite.balloom_right1.getFxImage();
-        } else if (canMove(this, BombermanGame.mapMatrix) == Direction.LEFT) {
-            this.x = this.x - 1;
-            this.direction = Direction.LEFT;
-            this.img = Sprite.balloom_left1.getFxImage();
-        } else if (canMove(this, BombermanGame.mapMatrix) == Direction.UP) {
-            this.y = this.y - 1;
-            this.direction = Direction.UP;
-            this.img = Sprite.balloom_right1.getFxImage();
-        } else if (canMove(this, BombermanGame.mapMatrix) == Direction.DOWN) {
-            this.y = this.y + 1;
-            this.direction = Direction.DOWN;
-            this.img = Sprite.balloom_left1.getFxImage();
-        }
+//        if (canMove(this, BombermanGame.mapMatrix) == Direction.RIGHT) {
+//            this.x = this.x + 1;
+//            this.direction = Direction.RIGHT;
+//            this.img = Sprite.balloom_right1.getFxImage();
+//        } else if (canMove(this, BombermanGame.mapMatrix) == Direction.LEFT) {
+//            this.x = this.x - 1;
+//            this.direction = Direction.LEFT;
+//            this.img = Sprite.balloom_left1.getFxImage();
+//        } else if (canMove(this, BombermanGame.mapMatrix) == Direction.UP) {
+//            this.y = this.y - 1;
+//            this.direction = Direction.UP;
+//            this.img = Sprite.balloom_right1.getFxImage();
+//        } else if (canMove(this, BombermanGame.mapMatrix) == Direction.DOWN) {
+//            this.y = this.y + 1;
+//            this.direction = Direction.DOWN;
+//            this.img = Sprite.balloom_left1.getFxImage();
+//        }
     }
 
     public static Direction canMove(Balloon balloon, char[][] mapMatrix) {

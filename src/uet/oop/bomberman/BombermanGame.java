@@ -101,7 +101,7 @@ public class BombermanGame extends Application {
             }
         };
 
-        playMusic("C:\\Users\\admin\\OneDrive\\Desktop\\tet.game\\res\\soundtrack\\stage_theme.wav");
+        playMusic("C:\\Users\\admin\\OneDrive\\Desktop\\tet.game\\res\\soundtrack\\stage_theme.mp3");
     }
 
     public void createMap() {
@@ -192,13 +192,13 @@ public class BombermanGame extends Application {
             }
         });
     }
-
+    MediaPlayer mediaPlayer;
     public void playMusic(String file) {
         Media media = new Media(new File(file).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setStartTime(Duration.ZERO);
-        mediaPlayer.setStopTime(Duration.seconds(3));
+        mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setCycleCount(10);
+        mediaPlayer.setStartTime(Duration.ZERO);
+        mediaPlayer.setStopTime(Duration.minutes(10));
         mediaPlayer.play();
     }
 }
