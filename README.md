@@ -7,7 +7,7 @@ Các thành viên nhóm UET K64-K2:
 Phiên bản: JDK 17
 
 Hướng dẫn: 
-1. Copy đường dẫn của **ib\lib** sau khi giải nén (sau đây gọi là PATH).
+1. Copy đường dẫn của **lib\lib** sau khi giải nén (sau đây gọi là PATH).
 2. Mở IntelliJ chọn **Module Setting\Library\\+\PATH**.
 3. Tiếp theo tại nút **Run\⋮\Run with parameter\Modify option\Add VM Option**.
 4. Điền *--module-path="PATH" --add-modules=javafx.controls,javafx.fxml,javafx.media*.
