@@ -14,13 +14,35 @@ public abstract class Entity {
     //Tọa độ Y tính từ góc trái trên trong Canvas
     protected int y;
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     protected Image img;
+    public boolean removed;
+    public boolean solid;
+    public boolean breakable;
+    public boolean broken;
+    public boolean exploded;
 
     //Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
-    public Entity(int xUnit, int yUnit, Image img) {
+    public Entity( int xUnit, int yUnit, Image img) {
         this.x = xUnit * Sprite.SCALED_SIZE;
         this.y = yUnit * Sprite.SCALED_SIZE;
         this.img = img;
+        removed = false;
+        solid = false;
+        breakable = true;
+        broken = false;
+        exploded = false;
+    }
+
+    public Entity () {
+        super();
     }
 
     public void render(GraphicsContext gc) {
@@ -29,11 +51,5 @@ public abstract class Entity {
 
     public abstract void update();
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
+    public void destroy() {}
 }
